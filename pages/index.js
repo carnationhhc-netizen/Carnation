@@ -108,11 +108,10 @@ export default function Home() {
 
       if (response.ok) {
         // Redirect to success page
-        setTimeout(() => {
-          router.push('/success')
-        }, 500)
+        router.push('/success')
       } else {
-        setMessage('❌ Error submitting form. Please try again or call (310) 774-0247.')
+        const errorMsg = result?.error || 'Error submitting form. Please try again or call (310) 774-0247.'
+        setMessage('❌ ' + errorMsg)
       }
     } catch (error) {
       console.error('Error:', error)

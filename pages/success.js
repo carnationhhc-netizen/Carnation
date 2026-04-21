@@ -5,21 +5,26 @@ import styles from '../styles/Success.module.css'
 
 export default function Success() {
   const router = useRouter()
-  const [countdown, setCountdown] = useState(5)
+  const [countdown, setCountdown] = useState(8)
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCountdown(prev => {
-        if (prev <= 1) {
-          router.push('/')
-          return 0
-        }
-        return prev - 1
-      })
+    const timer = setTimeout(() => {
+      router.push('/')
+    }, 8000)
+
+    const countdownTimer = setInterval(() => {
+      setCountdown(prev => prev - 1)
     }, 1000)
 
-    return () => clearInterval(timer)
+    return () => {
+      clearTimeout(timer)
+      clearInterval(countdownTimer)
+    }
   }, [router])
+
+  const handleReturnHome = () => {
+    router.push('/')
+  }
 
   return (
     <>
@@ -57,8 +62,8 @@ export default function Success() {
 
           <div className={styles.redirect}>
             <p>Returning to home page in <strong>{countdown}</strong> seconds...</p>
-            <button onClick={() => router.push('/')} className={styles.button}>
-              Return to Home
+            <button onClick={handleReturnHome} className={styles.button}>
+              Return to Home Now
             </button>
           </div>
         </div>
