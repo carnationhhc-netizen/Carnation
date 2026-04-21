@@ -1,5 +1,10 @@
 /* CSS Module - Uses variables from globals.css */
 
+.container {
+  min-height: 100vh;
+  background: white;
+}
+
 /* Navigation */
 .nav {
   background: white;
