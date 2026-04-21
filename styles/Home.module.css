@@ -72,7 +72,7 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 3rem;
   align-items: center;
 }
@@ -103,25 +103,7 @@
   font-weight: 500;
 }
 
-.heroImage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.imagePlaceholder {
-  width: 100%;
-  aspect-ratio: 1;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 64px;
-  border: 2px dashed rgba(255, 255, 255, 0.3);
-  flex-direction: column;
-}
 
 /* Quiz Section */
 .quizSection {

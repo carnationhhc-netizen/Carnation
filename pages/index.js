@@ -30,6 +30,17 @@ export default function Home() {
       ]
     },
     {
+      id: 'insurance',
+      question: "How will you be paying for care?",
+      answers: [
+        { text: "Medicare", value: "medicare" },
+        { text: "Private insurance", value: "private" },
+        { text: "Out of pocket / Self-pay", value: "self_pay" },
+        { text: "Medicaid", value: "medicaid" },
+        { text: "Not sure yet", value: "unsure" }
+      ]
+    },
+    {
       id: 'timeline',
       question: "When do you need care?",
       answers: [
@@ -151,12 +162,7 @@ export default function Home() {
                 <span className={styles.badge}>✓ 24/7 Support</span>
               </div>
             </div>
-            <div className={styles.heroImage}>
-              <div className={styles.imagePlaceholder}>
-                👨‍⚕️<br/>
-                <span style={{fontSize: '14px', marginTop: '10px'}}>Professional home care provider with patient</span>
-              </div>
-            </div>
+
           </div>
         </section>
 
