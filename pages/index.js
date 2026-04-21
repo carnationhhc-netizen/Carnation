@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const router = useRouter()
   const [quizStep, setQuizStep] = useState(0)
   const [quizAnswers, setQuizAnswers] = useState({})
   const [showForm, setShowForm] = useState(false)
@@ -105,19 +107,10 @@ export default function Home() {
       const result = await response.json()
 
       if (response.ok) {
-        setMessage('✅ Thank you! A care coordinator will call you within 2 hours.')
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          zip: '',
-          interested: ''
-        })
+        // Redirect to success page
         setTimeout(() => {
-          setShowForm(false)
-          setQuizStep(0)
-          setQuizAnswers({})
-        }, 3000)
+          router.push('/success')
+        }, 500)
       } else {
         setMessage('❌ Error submitting form. Please try again or call (310) 774-0247.')
       }
