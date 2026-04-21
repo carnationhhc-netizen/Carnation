@@ -78,7 +78,7 @@ export default async function handler(req, res) {
         // Send email to info@carnationhhc.com
         const msg = {
           to: 'info@carnationhhc.com',
-          from: 'info@carnationhhc.com',
+          from: process.env.NEXT_PUBLIC_SENDGRID_FROM_EMAIL || 'info@carnationhhc.com',
           subject: `🔴 NEW LEAD: ${name} - ${phone}`,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -122,7 +122,7 @@ export default async function handler(req, res) {
         if (email) {
           const confirmMsg = {
             to: email,
-            from: 'info@carnationhhc.com',
+            from: process.env.NEXT_PUBLIC_SENDGRID_FROM_EMAIL || 'info@carnationhhc.com',
             subject: 'Thank You for Your Inquiry - Carnation Home Health Care',
             html: `
               <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
