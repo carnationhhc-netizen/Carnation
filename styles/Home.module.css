@@ -25,10 +25,9 @@
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--primary-color);
-  letter-spacing: -0.5px;
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navLinks {

@@ -12,6 +12,7 @@ export default function ThankYou() {
 
       <div className={styles.container}>
         <div className={styles.content}>
+          <img src="/carnation-logo.jpg" alt="Carnation Home Health Care" className={styles.logo} />
           <div className={styles.checkmark}>✓</div>
           
           <h1>Thank You!</h1>

@@ -123,7 +123,7 @@ export default function Home() {
         {/* Navigation */}
         <nav className={styles.nav}>
           <div className={styles.navContainer}>
-            <div className={styles.logo}>🏥 Carnation</div>
+            <img src="/carnation-logo.jpg" alt="Carnation Home Health Care" className={styles.logo} />
             <div className={styles.navLinks}>
               <a href="#services">Services</a>
               <a href="#why-us">Why Us</a>
