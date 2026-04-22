@@ -108,7 +108,7 @@ export default function Home() {
 
       if (response.ok) {
         // Redirect to success page
-        router.push('/success')
+        window.location.href = '/success'
       } else {
         const errorMsg = result?.error || 'Error submitting form. Please try again or call (310) 774-0247.'
         setMessage('❌ ' + errorMsg)
