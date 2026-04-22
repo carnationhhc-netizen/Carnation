@@ -1,24 +1,7 @@
-import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import styles from '../styles/ThankYou.module.css'
 
 export default function ThankYou() {
-  const [countdown, setCountdown] = useState(15)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      window.location.href = '/'
-    }, 15000)
-
-    const interval = setInterval(() => {
-      setCountdown(prev => Math.max(0, prev - 1))
-    }, 1000)
-
-    return () => {
-      clearTimeout(timer)
-      clearInterval(interval)
-    }
-  }, [])
 
   return (
     <>
@@ -53,12 +36,8 @@ export default function ThankYou() {
             </a>
           </div>
 
-          <p className={styles.redirect}>
-            Returning to home in <strong>{countdown}</strong> seconds...
-          </p>
-          
           <a href="/" className={styles.button}>
-            Return to Home
+            ← Return to Home
           </a>
         </div>
       </div>
