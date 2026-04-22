@@ -88,11 +88,13 @@ export default function Home() {
   }
 
   const handleSubmit = async (e) => {
+    console.log('Form submitted!')
     e.preventDefault()
     setLoading(true)
     setMessage('')
 
     try {
+      console.log('Sending request to /api/submit-lead...')
       const response = await fetch('/api/submit-lead', {
         method: 'POST',
         headers: {
