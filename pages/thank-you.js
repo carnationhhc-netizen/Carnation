@@ -38,8 +38,8 @@ export default function ThankYou() {
           {/* Hero image */}
           <div className={styles.imageWrap}>
             <img
-              src="https://images.unsplash.com/photo-1576765608866-5b51046452be?w=720&q=80&auto=format&fit=crop"
-              alt="A caregiver warmly assisting an elderly patient at home"
+              src="https://images.unsplash.com/photo-1763573676689-bf2d7b474208?w=720&q=80&auto=format&fit=crop"
+              alt="An elderly couple laughing together at home"
               className={styles.heroImg}
               width={720}
               height={280}
