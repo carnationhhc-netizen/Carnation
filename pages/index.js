@@ -105,9 +105,13 @@ export default function Home() {
       })
 
       const result = await response.json()
+      console.log('Response status:', response.status)
+      console.log('Response OK:', response.ok)
+      console.log('Result:', result)
 
-      if (response.ok) {
+      if (response.ok || result.success) {
         // Redirect to success page
+        console.log('Redirecting to /success')
         window.location.href = '/success'
       } else {
         const errorMsg = result?.error || 'Error submitting form. Please try again or call (310) 774-0247.'
