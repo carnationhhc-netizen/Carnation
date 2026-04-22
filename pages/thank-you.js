@@ -3,20 +3,21 @@ import Head from 'next/head'
 import styles from '../styles/ThankYou.module.css'
 
 export default function ThankYou() {
-  const [countdown, setCountdown] = useState(10)
+  const [countdown, setCountdown] = useState(15)
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      window.location.href = '/'
+    }, 15000)
+
     const interval = setInterval(() => {
-      setCountdown(prev => {
-        if (prev <= 1) {
-          window.location.href = '/'
-          return 0
-        }
-        return prev - 1
-      })
+      setCountdown(prev => Math.max(0, prev - 1))
     }, 1000)
 
-    return () => clearInterval(interval)
+    return () => {
+      clearTimeout(timer)
+      clearInterval(interval)
+    }
   }, [])
 
   return (
@@ -53,7 +54,7 @@ export default function ThankYou() {
           </div>
 
           <p className={styles.redirect}>
-            Returning to home in {countdown} seconds...
+            Returning to home in <strong>{countdown}</strong> seconds...
           </p>
           
           <a href="/" className={styles.button}>
