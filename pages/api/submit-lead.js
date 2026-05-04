@@ -22,11 +22,11 @@ export default async function handler(req, res) {
     console.log('Received data:', { name, email, phone, zip, quizAnswers })
 
     // Validate required fields
-    if (!name || !phone || !zip) {
-      console.log('Validation failed: missing name, phone, or zip')
-      return res.status(400).json({ 
-        error: 'Missing required fields: name, phone, zip',
-        received: { name, phone, zip }
+    if (!name || !phone || !email || !zip) {
+      console.log('Validation failed: missing name, phone, email, or zip')
+      return res.status(400).json({
+        error: 'Missing required fields: name, phone, email, zip',
+        received: { name, phone, email, zip }
       })
     }
 

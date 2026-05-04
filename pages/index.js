@@ -224,13 +224,14 @@ export default function Home() {
                 <input
                   className={q.input}
                   type="email"
-                  placeholder="Email address (optional)"
+                  placeholder="Email address *"
                   value={contact.email}
                   onChange={e => setContact(c => ({ ...c, email: e.target.value }))}
+                  required
                 />
                 <button
                   className={q.continueBtn}
-                  disabled={!contact.name || !contact.phone}
+                  disabled={!contact.name || !contact.phone || !contact.email}
                 >
                   Continue →
                 </button>
