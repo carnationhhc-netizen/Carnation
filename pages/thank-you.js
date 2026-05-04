@@ -5,6 +5,7 @@ import {
   ShieldCheck, Award, Clock, CheckCircle2,
 } from 'lucide-react';
 import styles from '../styles/ThankYou.module.css';
+import * as gtag from '../lib/gtag';
 
 const fraunces = Fraunces({ subsets: ['latin'], weight: ['400', '600', '700'] });
 const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '600'] });
@@ -25,7 +26,8 @@ export default function ThankYou() {
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <div className={styles.logo}>Carnation Home Health</div>
-          <a href="tel:3107740247" className={styles.headerPhone}>
+          <a href="tel:3107740247" className={styles.headerPhone}
+            onClick={() => gtag.event('phone_click', { location: 'thankyou_header' })}>
             <Phone size={15} aria-hidden="true" />
             (310) 774-0247
           </a>
@@ -109,7 +111,8 @@ export default function ThankYou() {
           {/* Tap-to-call card */}
           <section className={styles.callCard} aria-label="Call us">
             <p className={styles.callLabel}>Need to reach us sooner?</p>
-            <a href="tel:3107740247" className={styles.callBtn}>
+            <a href="tel:3107740247" className={styles.callBtn}
+              onClick={() => gtag.event('phone_click', { location: 'thankyou_cta' })}>
               <Phone size={20} aria-hidden="true" />
               Call (310) 774-0247
             </a>

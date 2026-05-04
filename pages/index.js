@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styles from '../styles/Home.module.css';
 import q from '../styles/Quiz.module.css';
+import * as gtag from '../lib/gtag';
 
 /* ── Quiz config ─────────────────────────────────── */
 const QUIZ = [
@@ -119,6 +120,7 @@ export default function Home() {
         const d = await res.json().catch(() => ({}));
         throw new Error(d.error || 'Something went wrong. Please call us directly.');
       }
+      gtag.event('lead_form_submit', { method: 'quiz' });
       router.push('/thank-you');
     } catch (err) {
       setError(err.message);
@@ -138,7 +140,8 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <div className={styles.logo}>Carnation Home Health</div>
-          <a href="tel:3107740247" className={styles.headerPhone}>
+          <a href="tel:3107740247" className={styles.headerPhone}
+            onClick={() => gtag.event('phone_click', { location: 'header' })}>
             Call (310) 774-0247
           </a>
         </div>
@@ -365,7 +368,9 @@ export default function Home() {
               <br />
               Medicare Certified · Licensed in California
               <br />
-              <a href="tel:3107740247">(310) 774-0247</a>
+              <a href="tel:3107740247"
+                onClick={() => gtag.event('phone_click', { location: 'footer' })}>
+                (310) 774-0247</a>
               {' · '}
               <a href="mailto:info@carnationhhc.com">info@carnationhhc.com</a>
             </div>
