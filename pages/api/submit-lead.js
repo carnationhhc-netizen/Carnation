@@ -31,10 +31,12 @@ export default async function handler(req, res) {
     }
 
     // Extract quiz answers
-    const situation = quizAnswers?.situation || null
-    const insurance = quizAnswers?.insurance || null
-    const timeline = quizAnswers?.timeline || null
-    const county = quizAnswers?.location || null
+    const situation    = quizAnswers?.situation    || null
+    const insurance    = quizAnswers?.insurance    || null
+    const timeline     = quizAnswers?.timeline     || null
+    const county       = quizAnswers?.location     || null
+    const scheduleDay  = quizAnswers?.scheduleDay  || null
+    const scheduleTime = quizAnswers?.scheduleTime || null
 
     console.log('Attempting to insert into Supabase...')
 
@@ -96,6 +98,7 @@ export default async function handler(req, res) {
                 <p style="margin: 8px 0;"><strong>Insurance/Payment:</strong> ${insurance?.replace(/_/g, ' ') || 'Not specified'}</p>
                 <p style="margin: 8px 0;"><strong>Timeline:</strong> ${timeline?.replace(/_/g, ' ') || 'Not specified'}</p>
                 <p style="margin: 8px 0;"><strong>County:</strong> ${county?.replace(/_/g, ' ') || 'Not specified'}</p>
+                <p style="margin: 8px 0;"><strong>Call preference:</strong> ${scheduleDay || 'Not specified'}, ${scheduleTime || 'any time'}</p>
               </div>
               
               <h3 style="color: #333; margin-top: 20px;">Action Items</h3>
