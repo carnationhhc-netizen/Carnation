@@ -1,6 +1,9 @@
 /* ── Quiz section ──────────────────────────────── */
 .section {
-  background: linear-gradient(160deg, #1e3a8a 0%, #1e40af 100%);
+  background:
+    linear-gradient(160deg, rgba(15, 30, 90, 0.87) 0%, rgba(30, 64, 175, 0.80) 100%),
+    url('https://images.unsplash.com/photo-1765896387387-0538bc9f997e?w=1400&q=80&auto=format&fit=crop')
+    center / cover no-repeat;
   padding: 4rem 1.5rem 5rem;
   min-height: 80vh;
   display: flex;
