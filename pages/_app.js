@@ -15,6 +15,26 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      {/* Google Ads Conversion Tracking */}
+      <Script
+        async
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18141993256"
+      />
+      <Script
+        id="google-ads-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18141993256');
+          `,
+        }}
+      />
+
+      {/* Google Analytics */}
       {gtag.GA_ID && (
         <>
           <Script
